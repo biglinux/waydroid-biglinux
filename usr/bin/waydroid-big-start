@@ -2,3 +2,13 @@
 
 waydroid init
 systemctl start waydroid-container
+
+if [ ! -e "/etc/waydroid-big-3d" ]; then
+
+    if [ "$(lspci | grep VGA | grep -i -e amd -e intel)" != "" ]; then
+        waydroid-big-3d 1
+    else
+        waydroid-big-3d 0
+    fi
+
+fi
