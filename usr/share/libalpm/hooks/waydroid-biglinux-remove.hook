@@ -1,0 +1,10 @@
+[Trigger]
+Type = Package
+Operation = Remove
+Target = waydroid
+Target = waydroid-biglinux
+
+[Action]
+Description = Waydroid change
+When = PreTransaction
+Exec = /usr/share/libalpm/scripts/waydroid-biglinux-remove

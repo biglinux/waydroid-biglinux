@@ -1,0 +1,4 @@
+#!/bin/bash
+
+waydroid init
+systemctl start waydroid-container

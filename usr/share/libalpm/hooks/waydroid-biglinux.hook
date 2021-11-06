@@ -1,0 +1,11 @@
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = waydroid
+Target = waydroid-biglinux
+
+[Action]
+Description = Waydroid change
+When = PostTransaction
+Exec = /usr/share/libalpm/scripts/waydroid-biglinux

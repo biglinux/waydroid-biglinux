@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo '[Desktop Entry]
+Type=Application
+Name=Waydroid
+Exec=waydroid show-full-ui
+Icon=/usr/lib/waydroid/data/AppIcon.png' > /usr/share/applications/Waydroid.desktop

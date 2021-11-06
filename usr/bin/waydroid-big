@@ -1,0 +1,22 @@
+#!/bin/bash
+
+#Run root daemon
+if [ "$(ps -aux | grep waydroid | grep container)" = "" ]; then
+    pkexec waydroid-big-start
+fi
+
+waydroid show-full-ui &
+
+#Xorg
+if [ "$(ps -e | grep Xorg)" != "" ]; then
+    echo '[core]
+idle-time=0
+
+[shell]
+panel-location=""
+panel-position=none
+locking=false' > ~/.config/weston.ini
+
+weston --width=90000 --height=90000
+waydroid session stop
+fi
