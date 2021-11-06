@@ -1,0 +1,110 @@
+#!/bin/bash
+
+
+if [ "$1" = "1" ]; then
+    echo 'config.override_forced_orient=false
+debug.composition.type=c2d
+debug.egl.hw=1
+debug.enabletr=true
+debug.overlayui.enable=1
+debug.performance.tuning=1
+debug.qctwa.preservebuf=1
+debug.sf.hw=1
+debug.sf.nobootanimation=1
+debug.stagefright.ccodec=0
+dev.pm.dyn_samplingrate=1
+hw3d.force=1
+logcat.live=disable
+persist.android.strictmode=0
+persist.demo.hdmirotation=landscape
+persist.sys.app.rotation=force_land
+persist.sys.app.rotation=middle_port
+persist.sys.composition.type=c2d
+persist.sys.ui.hw=1
+profiler.force_disable_err_rpt=1
+profiler.force_disable_ulog=1
+ro.config.hw_quickpoweron=true
+ro.config.low_ram=true
+ro.fb.mode=1
+ro.hardware.camera=v4l2
+ro.hardware.egl=mesa
+ro.hardware.gralloc=gbm
+ro.kernel.android.checkjni=0
+ro.kernel.checkjni=0
+ro.opengles.version=196608
+ro.sf.compbypass.enable=1
+ro.sf.hwrotation=0
+ro.vndk.lite=true
+ro.vold.umsdirtyratio=20
+rtk.screenforceOrientation=1
+video.accelerate.hw=1
+waydroid.system_ota=http://ota.waydro.id/system/lineage/waydroid_x86_64/VANILLA.json
+waydroid.tools_version=1.2.0
+waydroid.vendor_ota=http://ota.waydro.id/vendor/waydroid_x86_64/MAINLINE.json' > /var/lib/waydroid/waydroid_base.prop
+echo 1 > /etc/waydroid-big-3d
+fi
+
+if [ "$1" = "0" ]; then
+    echo 'config.override_forced_orient=false
+debug.composition.type=c2d
+debug.egl.hw=1
+debug.enabletr=true
+debug.overlayui.enable=1
+debug.performance.tuning=1
+debug.qctwa.preservebuf=1
+debug.sf.hw=1
+debug.sf.nobootanimation=1
+debug.stagefright.ccodec=0
+dev.pm.dyn_samplingrate=1
+hw3d.force=1
+logcat.live=disable
+persist.android.strictmode=0
+persist.demo.hdmirotation=landscape
+persist.sys.app.rotation=force_land
+persist.sys.app.rotation=middle_port
+persist.sys.composition.type=c2d
+persist.sys.ui.hw=1
+profiler.force_disable_err_rpt=1
+profiler.force_disable_ulog=1
+ro.config.hw_quickpoweron=true
+ro.config.low_ram=true
+ro.fb.mode=1
+ro.hardware.camera=v4l2
+ro.hardware.egl=swiftshader
+ro.hardware.gralloc=default
+ro.kernel.android.checkjni=0
+ro.kernel.checkjni=0
+ro.opengles.version=196608
+ro.sf.compbypass.enable=1
+ro.sf.hwrotation=0
+ro.vndk.lite=true
+ro.vold.umsdirtyratio=20
+rtk.screenforceOrientation=1
+video.accelerate.hw=1
+waydroid.system_ota=http://ota.waydro.id/system/lineage/waydroid_x86_64/VANILLA.json
+waydroid.tools_version=1.2.0
+waydroid.vendor_ota=http://ota.waydro.id/vendor/waydroid_x86_64/MAINLINE.json' > /var/lib/waydroid/waydroid_base.prop
+echo 0 > /etc/waydroid-big-3d
+fi
+
+if [ "$1" = "" ]; then
+
+    if [ "$(grep swiftshader /var/lib/waydroid/waydroid_base.prop)" != "" ]; then
+        echo "3D acceleration DISABLED"
+    else
+        echo "3D acceleration ENABLED"
+    fi
+
+echo ""
+
+echo $"3D acceleration improves performance,
+but is only compatible with some
+Intel and AMD graphics cards
+
+To enable 3D
+sudo waydroid-big-3d 1
+
+To Disable 3D
+sudo waydroid-big-3d 0"
+
+fi
