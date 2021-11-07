@@ -15,8 +15,10 @@ idle-time=0
 [shell]
 panel-location=""
 panel-position=none
-locking=false' > ~/.config/weston.ini
+locking=false
+background-image=/usr/share/waydroid-extra/loading-android.jpg
+background-type=scale-crop' > ~/.config/weston.ini
 
-weston --width=90000 --height=90000
+weston --width=9000 --height=9000
 waydroid session stop
 fi
