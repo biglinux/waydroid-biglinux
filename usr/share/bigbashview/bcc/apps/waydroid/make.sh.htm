@@ -1,0 +1,38 @@
+#!/bin/bash
+
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=waydroid-biglinux
+
+# Don't group windows
+xprop -id "$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" -f WM_CLASS 8s -set WM_CLASS "$$"
+
+
+if [ "$install" = "1" ]; then
+    pamac-installer waydroid-meta-x11
+fi
+
+if [ "$gpu" = "1" ]; then
+    pkexec waydroid-big-3d 1
+fi
+
+if [ "$gpu" = "0" ]; then
+    pkexec waydroid-big-3d 0
+fi
+
+if [ "$start" = "1" ]; then
+    waydroid-big </dev/null &>/dev/null &
+    sleep 1
+fi
+
+if [ "$stop" = "1" ]; then
+    waydroid session stop
+    killall weston
+fi
+
+
+cat <<EOF
+<meta http-equiv="refresh" content="0; URL='index.sh.htm'"/>
+EOF
+
+

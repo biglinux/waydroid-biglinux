@@ -1,0 +1,136 @@
+#!/bin/bash
+
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=waydroid-biglinux
+
+# Don't group windows
+xprop -id "$(xprop -root '\t$0' _NET_ACTIVE_WINDOW | cut -f 2)" -f WM_CLASS 8s -set WM_CLASS "$$"
+
+
+
+RATE="$(cat ${FOLDER_CONFIG}/rate)"
+PITCH="$(cat ${FOLDER_CONFIG}/pitch)"
+VOLUME="$(cat ${FOLDER_CONFIG}/volume)"
+VOICE="$(cat ${FOLDER_CONFIG}/voice)"
+
+if [ "$RATE" = "" ]; then
+    RATE="-25"
+    echo "$RATE" > ${FOLDER_CONFIG}/rate
+fi
+
+if [ "$PITCH" = "" ]; then
+    PITCH="-25"
+    echo "$PITCH" > ${FOLDER_CONFIG}/pitch
+fi
+
+if [ "$VOLUME" = "" ]; then
+    VOLUME="0"
+    echo "$VOLUME" > ${FOLDER_CONFIG}/volume
+fi
+
+if [ "$VOICE" = "" ]; then
+
+    if ["$(echo "$LANG" | grep pt)" != "" ]; then
+        VOICE="Letícia-F123"
+    else
+        VOICE="Evgeniy-Eng"
+    fi
+
+    echo "$VOICE" > ${FOLDER_CONFIG}/voice
+fi
+
+
+# Import BigControlCenter base modules / Importa os módulos básicos do BigControlCenter
+# That's include jquery and materialize / Isso inclui o jquery e o materialize
+# http://materializecss.com/
+. /usr/share/bigbashview/bcc/shell/base.sh
+
+  echo '
+  <body>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/usr/share/bigbashview/bcc/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/usr/share/bigbashview/bcc/materialize/css/materialize.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="/usr/share/bigbashview/bcc/materialize/js/jquery.js"></script>
+    <script src="/usr/share/bigbashview/bcc/materialize/js/materialize.js"></script>
+    <script src="/usr/share/bigbashview/bcc/js/big.js"></script>
+  </head>'
+  echo '<title>' $"Waydroid" '</title>'
+  echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />'
+
+
+
+echo '<div id=page2>'
+echo '<div id="middle" class="bar"><h1>'
+
+echo $"Com o Waydroid podemos utilizar um sistema Android dentro do BigLinux, com melhor desempenho e integração do que utilizando sistemas de virtualização, porém ainda está em fase experimental e alguns programas podem não funcionar.
+<br><br>
+Com placas de vídeo Intel e AMD é possível ter aceleração 3D, com outras placas de vídeo a aceleração 3D deve ficar desativada.
+<br><br>
+A instalação irá fazer quase 1 GB de Download.
+<br><br>
+Com o Wayland instalado é possível instalar programas no formato .apk clicando duas vezes no arquivo, utilizando o gerenciador de arquivos do BigLinux."
+  
+
+echo "<div id=buttons>"
+
+if [ -e "/usr/bin/waydroid-big" ]; then
+
+    tooltipinstall=$"A instalação pode ser um pouco demorada"
+    tooltiprun=$"O Waydroid também pode ser iniciado utilizando o menu do sistema"
+    tooltipgpu=$"Se a aceleração 3D estiver ativada em um hardware incompatível
+    <br> o android não passará da tela de loading"
+
+    if [ "$(waydroid status | grep Session | grep RUNNING)" != "" ] || [ "$(ps -e | grep waydroid-big)" != "" ]; then
+
+        echo "<div id=theme2-2 class=\"tooltipped with-gap\" data-position=\"top\" data-delay=\"250\" data-tooltip=\"$tooltiprun\">
+        <a class=\"waves-effect waves-light btn-large\" href=\"make.sh.htm?stop=1\">" $"Parar o Waydroid" '</a></div>'
+    else
+
+        echo "<div id=theme2-2 class=\"tooltipped with-gap\" data-position=\"top\" data-delay=\"250\" data-tooltip=\"$tooltiprun\">
+        <a class=\"waves-effect waves-light btn-large\" href=\"make.sh.htm?start=1\">" $"Iniciar o Waydroid" '</a></div>'
+    fi
+
+
+
+    if [ "$(waydroid-big-3d | grep DISABLED)" != "" ]; then
+
+        echo "<div id=theme2-2 class=\"tooltipped with-gap\" data-position=\"top\" data-delay=\"250\" data-tooltip=\"$tooltipgpu\">
+        <a class=\"waves-effect waves-light btn-large\" href=\"make.sh.htm?gpu=1\">" $"Ativar a aceleração 3D" '</a></div>'
+    else
+        echo "<div id=theme2-2 class=\"tooltipped with-gap\" data-position=\"top\" data-delay=\"250\" data-tooltip=\"$tooltipgpu\">
+        <a class=\"waves-effect waves-light btn-large\" href=\"make.sh.htm?gpu=0\">" $"Desativar a aceleração 3D" '</a></div>'
+    fi
+
+else
+    echo "<div id=theme2-2 class=\"tooltipped with-gap\" data-position=\"top\" data-delay=\"250\" data-tooltip=\"$tooltipinstall\">
+    <a class=\"waves-effect waves-light btn-large\" href=\"make.sh.htm?install=1\">" $"Instalar o Waydroid" '</a>'
+fi
+
+# run bash scripts
+cat << EOF
+<script>
+\$('#PITCH').on('change', function() {
+    _run('./pitch.run ' + \$(this).find(":selected").val());
+});
+
+\$('#RATE').on('change', function() {
+    _run('./rate.run ' + \$(this).find(":selected").val());
+});
+
+\$('#VOLUME').on('change', function() {
+    _run('./volume.run ' + \$(this).find(":selected").val());
+});
+
+\$('#VOICE').on('change', function() {
+    _run('./voice.run ' + \$(this).find(":selected").val());
+});
+
+</script>
+EOF
+
+
+echo "</div></div>"
+IFS=$OIFS

@@ -1,0 +1,289 @@
+
+body {
+			background-image: url(/usr/share/wallpapers/robot.jpg) ;
+			background-position: center center;
+			background-repeat:  no-repeat;
+			background-attachment: fixed;
+			background-size:  cover;
+			background-color: #000;
+margin-top: 0px;
+margin-left: 0px;
+margin-right: 0px;
+margin-bottom: 0px;
+padding: 0px;
+text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+font-weight: 250;
+color: rgba(255, 255, 255, 1);
+font-family: 'Droid Sans';
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+.bar:before {
+  background: url(/usr/share/wallpapers/robot.jpg);
+	background-attachment: fixed;
+}
+
+img#img-reload {
+    vertical-align: middle;
+    width: 26px;
+    margin-bottom: 2px;
+}
+
+
+#page2 {
+	margin-right: 16%;
+	margin-left: 16%;
+	height: 100%;
+}
+
+
+#middle {
+    display: table-cell;
+    vertical-align: middle;
+    min-width: 720px;
+    width: 100%;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-bottom: 15px;
+    padding-top: 65px;
+    font-size: 17px;
+    display: block;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-top: 0px;
+    border-bottom: 0px;
+    argin-bottom: 0px;
+    height: 100%;
+    top: 0%;
+}
+
+.backdrop {
+background-color: rgba(111, 111, 111, 1);
+}
+
+.bar {
+  position: relative;
+  background: rgba(0,0,0,0.65);
+  box-shadow: 0px 0px 95px 0px rgba(0,0,0,1);
+	height: 100%;
+}
+
+.bar:before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+  top: 0; right: 0; left: 0;
+  filter: blur(15px);
+  -webkit-filter: blur(15px);
+	height: 100%;
+}
+
+.material-tooltip {font-family:ubuntu;
+font-weight:400;font-size:17px;
+line-height: 120%;}
+
+.with-gap {color: #ffffff !important;
+font-size:17px !important;
+margin-left:20px;
+margin-right:20px;
+text-align: -webkit-center;
+}
+
+h1 {
+    line-height: 1.3; text-align:center;font-family:ubuntu;font-weight:400;font-size:17px;color:#fff;text-shadow:0em 0.05em 0 rgba(0,0,0,0.35)}
+button {color:#454545;background:transparent;border-width:2px;border-style: solid;border-color: #454545;position:relative;margin:1em;display:inline-block;padding:0.5em 1em;transition:all 0.3s ease-in-out;text-align:center;
+font-family:ubuntu;font-weight:bold;font-size:17px}
+button:before, button:after {content:'';display:block;position:absolute;border-color:#454545;box-sizing:border-box;border-style:solid;width:1em;height:1em;transition:all 0.3s ease-in-out}
+button:before {top:-6px;left:-6px;border-width:2px 0 0 2px;z-index:5;}
+button:after {bottom:-6px;right:-6px;border-width:0 2px 2px 0;}
+button:hover:before, button:hover:after {width:calc(100% + 12px);
+  height:calc(100% + 12px);border-color:#fff}
+button:hover {color:#353535;background-color:#fff;border-color:#fff}
+.panel {max-width:960px;text-align:center;position:relative;margin:auto;}
+
+
+.pink button {color:#eb1777;border-color:#eb1777}
+.pink button:before, .pink button:after  {border-color:#eb1777}
+.pink button:hover:before, .pink button:hover:after {border-color:#eb1777;}
+.pink button:hover {color:#fff;background-color:#eb1777;border-color:#eb1777;}
+.pink .panel {max-width:960px;text-align:center;position:relative;margin:auto;}
+
+
+.blue button {color:#3bb4e5;border-color:#3bb4e5}
+.blue button:before, .blue button:after  {border-color:#3bb4e5}
+.blue button:hover:before, .blue button:hover:after {width:calc(100% + 12px);
+  height:calc(100% + 12px);border-color:#3bb4e5;transform:rotateY(180deg)}
+.blue button:hover {color:#3bb4e5;background-color:transparent;border-color:#3bb4e5}
+.blue .panel {max-width:960px;text-align:center;position:relative;margin:auto;}
+
+.borderless button {border-color:rgba(0,0,0,0);color:#999}
+.borderless button:hover {border-color:#353535;background-color:transparent;color:#353535}
+.borderless button:before, .borderless button:after {border-color:transparent;}
+.borderless button:hover:before, .borderless button:hover:after {width:calc(100% + 12px); height:calc(100% + 12px);border-color:#353535}
+
+.bw button {color:#fff;border-color:#fff;text-shadow:0 1px 1px rgba(0,0,0,0.1);
+box-shadow:0 1px 3px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.1) inset
+}
+.bw button:before, .bw button:after  {border-color:#fff}
+.bw button:hover:before, .bw button:hover:after {width:calc(100% + 12px);
+  height:calc(100% + 12px);border-color:#353535;}
+.bw button:hover {color:#fff;background-color:#353535;border-color:#353535}
+.blue .panel {max-width:960px;text-align:center;position:relative;margin:auto;}
+
+div#contentbig {
+    display: inline-flex;
+}
+
+div#theme {
+    display: grid;
+    justify-items: flex-start;
+    border: 2px solid #ffffff61;
+    margin-right: 26px;
+    margin-left: 26px;
+    padding-right: 0px;
+    padding-bottom: 28px;
+    border-radius: 11px;
+    padding-left: 2px;
+    padding-top: 24px;
+    min-width: 238px;
+}
+
+div#theme2 {
+display: inherit;
+    border: 2px solid #ffffff61;
+    margin-right: 26px;
+    margin-left: 26px;
+    padding-right: 0px;
+    padding-bottom: 28px;
+    border-radius: 11px;
+    padding-left: 2px;
+    padding-top: 24px;
+    min-width: 238px;
+}
+
+h2 {
+    margin-top: -38px;
+    margin-bottom: -7px;
+    margin-left: 10px;
+    height: 22px;
+    font-size: 17px;
+    text-shadow: 1px 1px 4px rgb(0, 0, 0), 1px 1px 4px rgb(0, 0, 0);
+}
+
+h3 {
+    margin-top: -38px;
+    margin-bottom: -7px;
+    margin-left: 10px;
+    height: 22px;
+    font-size: 17px;
+    text-shadow: 1px 1px 4px rgb(0, 0, 0), 1px 1px 4px rgb(0, 0, 0);
+}
+
+
+div#performance {
+    display: grid;
+    justify-items: flex-start;
+}
+
+
+
+div#contentbig {
+    margin-top: 30px;
+}
+
+label.tooltipped.with-gap {
+    margin-top: 14px;
+    margin-left: 21px;
+    margin-right: 50px;
+}
+
+div#theme2-2 {
+    margin-top: 65px;
+}
+
+.btn, .btn-large {
+    background-color: #a5a5a559;
+    border-radius: 10px;
+
+}
+
+.btn-large:hover {
+    background-color: #ffffffd9;
+    color: #000000;
+}
+
+
+select {
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid #f2f2f285;
+    font-size: 16px;
+    margin-bottom: 28px;
+}
+
+select#VOICE {
+    width: 350px;
+}
+
+option {
+    background-color: #000000b3;
+}
+
+label {
+    font-size: 17px;
+    color: #feffb1;
+}
+
+
+#content {
+    display: inline-flex;
+    margin-bottom: 0px;
+}
+
+div#left {
+    margin-right: 65px;
+}
+
+div#right {
+    margin-left: 65px;
+}
+
+div#mic {
+    width: 90%;
+    margin: auto;
+    margin-top: 0px;
+} 
+
+.btn, .btn-large {
+    margin-left: 15px;
+    margin-right: 15px;
+    place-self: flex-end;
+}
+
+div#buttons {
+    display: flex;
+    justify-content: center;
+}
+
+a#link_bottom_left {
+    font-size: 17px;
+    color: #8dd5ff;
+    margin-top: 30px;
+    margin: auto;
+    margin-top: 35px;
+    font-size: 15px !important;
+}
+
+a#link_bottom_right {
+    font-size: 17px;
+    color: #8dd5ff;
+	margin-top: 30px;
+}
+
+div#autostart {
+    width: 213px;
+    margin: auto;
+	margin-bottom: -58px;
+}

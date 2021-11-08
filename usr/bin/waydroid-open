@@ -1,0 +1,6 @@
+#!/bin/bash
+
+waydroid-big &
+waydroid-open-wait "$1" | yad --progress --no-buttons --borders=62 --auto-close --text=$"Aguarde..." --title "Waydroid"  --skip-taskbar --center --on-top
+
+yad --text $"Concluido" --title "Waydroid" --button=OK --borders=40 --center --on-top

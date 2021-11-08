@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo 10
+number="$(waydroid app list 2> /dev/null | grep -c Name)"
+echo 40
+until [ $number -gt 10 ]
+do
+      sleep 1
+      number="$(waydroid app list 2> /dev/null | grep -c Name)"
+done
+
+echo 60
+waydroid app install "$1"
+

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# List installed apps without system apps
+waydroid app list | grep -e ^Name -e ^packageName | sed ':a;N;$!ba;s/\npackage/|package/g' | grep -ve 'com.android.documentsui' -ve 'com.android.contacts' -ve 'org.lineageos.recorder' -ve 'com.android.gallery3d' -ve 'org.lineageos.jelly' -ve 'org.lineageos.eleven' -ve 'org.lineageos.etar' -ve 'com.android.settings' -ve 'com.android.calculator2' -ve 'com.android.email' -ve 'com.android.deskclock' -ve 'com.android.traceur'
