@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=waydroid-biglinux
+
 waydroid-big &
 waydroid-open-wait "$1" | yad --progress --no-buttons --borders=62 --auto-close --text=$"Aguarde..." --title "Waydroid"  --skip-taskbar --center --on-top
 
