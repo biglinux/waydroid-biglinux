@@ -1,8 +1,25 @@
 #!/bin/bash
 
-if [ "$(ps -e | grep weston)" != "" ]; then
-    exit
+# if [ "$(ps -e | grep weston)" != "" ]; then
+#     exit
+# fi
+
+cd /run/user/$UID/
+FOLDER="/run/user/$UID"
+FILENAME="waydroid"
+
+#WAYLAND_DISPLAY="$(ls -1t waydroid* | grep -v '.lock' | head -1)" waydroid show-full-ui
+
+if [ -e "${FOLDER}/${FILENAME}" ] ; then
+    i=1
+    while [ -e "${FOLDER}/${FILENAME}${i}" ] ; do
+        let i++
+    done
+        DISPLAY_NUMBER="$i"
 fi
+
+kdialog --msgbox "number: $DISPLAY_NUMBER"
+
 
 #Run root daemon
 if [ "$(ps -aux | grep waydroid | grep container)" = "" ]; then
@@ -26,7 +43,9 @@ if [ "$(ps -aux | grep waydroid | grep container)" = "" ]; then
     sleep 1
 fi
 
-waydroid show-full-ui &
+WAYLAND_DISPLAY=waydroid${DISPLAY_NUMBER} waydroid show-full-ui &
+
+
 
 #Xorg
 if [ "$(ps -e | grep Xorg)" != "" ]; then
@@ -40,6 +59,6 @@ locking=false
 background-image=/usr/share/waydroid-extra/loading-android.jpg
 background-type=scale-crop' > ~/.config/weston.ini
 
-weston --width=6000 --height=6000
+weston -S waydroid${DISPLAY_NUMBER} --width=6000 --height=6000
 waydroid session stop
 fi
