@@ -18,8 +18,6 @@ if [ -e "${FOLDER}/${FILENAME}" ] ; then
         DISPLAY_NUMBER="$i"
 fi
 
-kdialog --msgbox "number: $DISPLAY_NUMBER"
-
 
 #Run root daemon
 if [ "$(ps -aux | grep waydroid | grep container)" = "" ]; then
