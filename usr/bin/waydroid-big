@@ -54,7 +54,7 @@ idle-time=0
 panel-location=""
 panel-position=none
 locking=false
-background-image=/usr/share/waydroid-extra/loading-android.jpg
+background-image=/usr/share/waydroid-extra/loading-android.png
 background-type=scale-crop' > ~/.config/weston.ini
 
 weston -S waydroid${DISPLAY_NUMBER} --width=6000 --height=6000
