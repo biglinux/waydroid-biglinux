@@ -57,6 +57,15 @@ locking=false
 background-image=/usr/share/waydroid-extra/loading-android.png
 background-type=scale-crop' > ~/.config/weston.ini
 
-weston -S waydroid${DISPLAY_NUMBER} --width=6000 --height=6000
+
+FOLDER_CONFIG="$HOME/.config/waydroid"
+RESOLUTION=$(cat ${FOLDER_CONFIG}/resolution)
+
+if [ "$RESOLUTION" = "" ]; then
+    RESOLUTION="6000x6000"
+fi
+
+
+weston -S waydroid${DISPLAY_NUMBER} --width=$(echo $RESOLUTION | cut -f1 -dx) --height=$(echo $RESOLUTION | cut -f2 -dx)
 waydroid session stop
 fi
