@@ -21,7 +21,7 @@ fi
 
 #Run root daemon
 if [ "$(ps -aux | grep waydroid | grep container)" = "" ]; then
-    pkexec waydroid-big-start
+    pkexec sh -c 'systemctl stop dnsmasq && waydroid-big-start'
 fi
 
 sleep 1
