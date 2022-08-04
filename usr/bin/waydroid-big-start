@@ -1,5 +1,6 @@
 #!/bin/bash
 
+grep sys.use_memfd=true /var/lib/waydroid/waydroid_base.prop || echo sys.use_memfd=true | tee -a /var/lib/waydroid/waydroid_base.prop
 waydroid init
 systemctl start waydroid-container
 
