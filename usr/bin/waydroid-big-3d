@@ -40,7 +40,8 @@ rtk.screenforceOrientation=1
 video.accelerate.hw=1
 waydroid.system_ota=http://ota.waydro.id/system/lineage/waydroid_x86_64/VANILLA.json
 waydroid.tools_version=1.2.0
-waydroid.vendor_ota=http://ota.waydro.id/vendor/waydroid_x86_64/MAINLINE.json' > /var/lib/waydroid/waydroid_base.prop
+waydroid.vendor_ota=http://ota.waydro.id/vendor/waydroid_x86_64/MAINLINE.json
+sys.use_memfd=true' > /var/lib/waydroid/waydroid_base.prop
 echo 1 > /etc/waydroid-big-3d
 fi
 
@@ -83,7 +84,8 @@ rtk.screenforceOrientation=1
 video.accelerate.hw=1
 waydroid.system_ota=http://ota.waydro.id/system/lineage/waydroid_x86_64/VANILLA.json
 waydroid.tools_version=1.2.0
-waydroid.vendor_ota=http://ota.waydro.id/vendor/waydroid_x86_64/MAINLINE.json' > /var/lib/waydroid/waydroid_base.prop
+waydroid.vendor_ota=http://ota.waydro.id/vendor/waydroid_x86_64/MAINLINE.json
+sys.use_memfd=true' > /var/lib/waydroid/waydroid_base.prop
 echo 0 > /etc/waydroid-big-3d
 fi
 
@@ -108,3 +110,5 @@ To Disable 3D
 sudo waydroid-big-3d 0"
 
 fi
+
+

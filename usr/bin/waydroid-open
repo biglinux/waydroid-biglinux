@@ -4,7 +4,11 @@
 export TEXTDOMAINDIR="/usr/share/locale"
 export TEXTDOMAIN=waydroid-biglinux
 
-waydroid-big &
+
+if [ "$(ps -e | grep waydroid-big)" = "" ]; then
+    waydroid-big &
+fi
+
 waydroid-open-wait "$1" | yad --progress --no-buttons --borders=62 --auto-close --text=$"Aguarde..." --title "Waydroid"  --skip-taskbar --center --on-top
 
 yad --text $"Concluído" --title "Waydroid" --button=OK --borders=40 --center --on-top

@@ -1,8 +1,17 @@
 #!/bin/bash
 
+#Translation
+export TEXTDOMAINDIR="/usr/share/locale"
+export TEXTDOMAIN=waydroid-biglinux
+
 # if [ "$(ps -e | grep weston)" != "" ]; then
 #     exit
 # fi
+
+if [ $(ps -e | grep waydroid-big | wc -l) -gt 2 ]; then
+    kdialog --passivepopup $"Waydroid está aberto."
+    exit
+fi
 
 cd /run/user/$UID/
 FOLDER="/run/user/$UID"
