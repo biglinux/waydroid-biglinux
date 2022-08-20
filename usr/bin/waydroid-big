@@ -75,6 +75,13 @@ if [ "$RESOLUTION" = "" ]; then
 fi
 
 
-weston -S waydroid${DISPLAY_NUMBER} --width=$(echo $RESOLUTION | cut -f1 -dx) --height=$(echo $RESOLUTION | cut -f2 -dx)
+if [ "$(grep swiftshader /var/lib/waydroid/waydroid_base.prop)" != "" ]; then
+    weston --use-pixman -S waydroid${DISPLAY_NUMBER} --width=$(echo $RESOLUTION | cut -f1 -dx) --height=$(echo $RESOLUTION | cut -f2 -dx)
+else
+    weston -S waydroid${DISPLAY_NUMBER} --width=$(echo $RESOLUTION | cut -f1 -dx) --height=$(echo $RESOLUTION | cut -f2 -dx)
+fi
+
+
+
 waydroid session stop
 fi
