@@ -1,0 +1,45 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the waydroid-biglinux package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: waydroid-biglinux\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-23 19:21-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: he\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid ""
+"3D acceleration improves performance,\n"
+"but is only compatible with some\n"
+"Intel and AMD graphics cards\n"
+"\n"
+"To enable 3D\n"
+"sudo waydroid-big-3d 1\n"
+"\n"
+"To Disable 3D\n"
+"sudo waydroid-big-3d 0"
+msgstr ""
+"האצת תלת מימד משפרת את הביצועים,\n"
+"אבל זה תואם רק עם כמה\n"
+"כרטיסים גרפיים של אינטל ו- AMD\n"
+"\n"
+"כדי להפעיל תלת-ממד\n"
+"סודו ויידרואיד-ביג-3D 1\n"
+"\n"
+"כדי להשבית 3D\n"
+"סודו ויידרואיד-ביג-3D 0"
+
+msgid "Aguarde..."
+msgstr "חכה..."
+
+msgid "Concluído"
+msgstr "הושלם"
