@@ -2,20 +2,28 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the waydroid-biglinux package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: waydroid-biglinux\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-23 19:21-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: attranslate\n"
+
+msgid "Aguarde..."
+msgstr "Kérjük, várjon..."
+
+msgid "Concluído"
+msgstr "Lezárva"
+
+msgid "Waydroid está aberto."
+msgstr "A Waydroid nyitva van."
 
 msgid ""
 "3D acceleration improves performance,\n"
@@ -37,9 +45,3 @@ msgstr ""
 "\n"
 "3D letiltása\n"
 "sudo waydroid-big-3d 0"
-
-msgid "Aguarde..."
-msgstr "Kérjük, várjon..."
-
-msgid "Concluído"
-msgstr "Lezárva"

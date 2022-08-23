@@ -7,14 +7,21 @@
 msgid   ""
 msgstr  "Project-Id-Version: waydroid-biglinux\n"
         "Report-Msgid-Bugs-To: \n"
-        "POT-Creation-Date: 2022-07-23 19:21-0300\n"
-        "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
         "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
         "Language-Team: LANGUAGE <LL@li.org>\n"
         "Language: \n"
         "MIME-Version: 1.0\n"
         "Content-Type: text/plain; charset=UTF-8\n"
         "Content-Transfer-Encoding: 8bit\n"
+
+msgid   "Aguarde..."
+msgstr  ""
+
+msgid   "Concluído"
+msgstr  ""
+
+msgid   "Waydroid está aberto."
+msgstr  ""
 
 msgid   "3D acceleration improves performance,\n"
         "but is only compatible with some\n"
@@ -25,10 +32,4 @@ msgid   "3D acceleration improves performance,\n"
         "\n"
         "To Disable 3D\n"
         "sudo waydroid-big-3d 0"
-msgstr  ""
-
-msgid   "Aguarde..."
-msgstr  ""
-
-msgid   "Concluído"
 msgstr  ""
