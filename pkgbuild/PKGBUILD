@@ -8,7 +8,7 @@ license=('GPL')
 url="https://github.com/biglinux/waydroid-biglinux"
 pkgdesc="Simplify waydroid usage"
 source=("git+https://github.com/biglinux/waydroid-biglinux.git")
-depends=(waydroid waydroid-image python-pyclip)
+depends=(waydroid python-pyclip)
 md5sums=(SKIP)
 
 package() {
